@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dungeonmaker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9be0abf5b92451d7f7f92ea83db0a799ff9cbcfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b2486288c24e0fec6e3df300d44e862b06195d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dungeonmaker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dungeonmaker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
