@@ -19,6 +19,7 @@ namespace Dungeonmaker
 
         /// <summary>
         /// how wide the generated map should be
+        /// default: 11
         /// </summary>
         public int mapWidth
         {
@@ -34,6 +35,7 @@ namespace Dungeonmaker
 
         /// <summary>
         /// how high the generated map should be
+        /// default: 11
         /// </summary>
         public int mapHeight
         {
@@ -49,6 +51,7 @@ namespace Dungeonmaker
 
         /// <summary>
         /// x position of the start room
+        /// default: 5
         /// </summary>
         public int startX
         {
@@ -64,6 +67,7 @@ namespace Dungeonmaker
 
         /// <summary>
         /// y position of the start room
+        /// default: 5
         /// </summary>
         public int startY
         {
@@ -79,6 +83,7 @@ namespace Dungeonmaker
 
         /// <summary>
         /// length of the main Path
+        /// default: 5
         /// </summary>
         public int mainPathLength
         {
@@ -94,6 +99,7 @@ namespace Dungeonmaker
 
         /// <summary>
         /// Amount of tries the generateDungeonMap has before it returns null. Causes for that can f.e. be inputting a mainPathLength too large
+        /// default: 1000
         /// </summary>
         public int tries
         {
