@@ -198,36 +198,6 @@ namespace Dungeonmaker
 
             return map;
         }
-
-        public class Tile
-        {
-            private bool[] _connections = {false, false , false , false };
-            private List<string> attributes = new List<string>();
-
-            public Tile(bool[] connections)
-            {
-                SetConnections(connections);
-            }
-
-            public void SetConnections(bool[] connections)
-            {
-                if (connections.Length == 4)
-                {
-                    _connections = connections;
-                }
-                else
-                {
-                    throw new ArgumentException("you need 4 booleans as parameters in connections");
-                }
-            }
-
-            public void AddAttribute(string attribute)
-            {
-                attributes.Add(attribute);
-            }
-
-            public bool[] getConnections() { return _connections; }
-        }
     }
 }
 
