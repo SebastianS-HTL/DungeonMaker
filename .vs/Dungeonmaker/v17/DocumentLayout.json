@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{3912F5BC-EC2D-4EA7-B984-371A937804A2}|Dungeonmaker\\Dungeonmaker.csproj|solutionrelative:dungeonmaker\\dungeonmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3912F5BC-EC2D-4EA7-B984-371A937804A2}|Dungeonmaker\\Dungeonmaker.csproj|c:\\users\\micha\\onedrive\\dokumente\\github\\dungeonmaker\\dungeonmaker\\mapsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3912F5BC-EC2D-4EA7-B984-371A937804A2}|Dungeonmaker\\Dungeonmaker.csproj|solutionrelative:dungeonmaker\\mapsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3912F5BC-EC2D-4EA7-B984-371A937804A2}|Dungeonmaker\\Dungeonmaker.csproj|c:\\users\\micha\\onedrive\\dokumente\\github\\dungeonmaker\\dungeonmaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3912F5BC-EC2D-4EA7-B984-371A937804A2}|Dungeonmaker\\Dungeonmaker.csproj|solutionrelative:dungeonmaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MapSettings.cs",
+              "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Dokumente\\GitHub\\DungeonMaker\\Dungeonmaker\\MapSettings.cs",
+              "RelativeDocumentMoniker": "Dungeonmaker\\MapSettings.cs",
+              "ToolTip": "C:\\Users\\micha\\OneDrive\\Dokumente\\GitHub\\DungeonMaker\\Dungeonmaker\\MapSettings.cs",
+              "RelativeToolTip": "Dungeonmaker\\MapSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T17:05:45.642Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,14 +49,14 @@
               "RelativeDocumentMoniker": "Dungeonmaker\\DungeonMap.cs",
               "ToolTip": "C:\\Users\\micha\\OneDrive\\Dokumente\\GitHub\\DungeonMaker\\Dungeonmaker\\DungeonMap.cs",
               "RelativeToolTip": "Dungeonmaker\\DungeonMap.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-24T15:13:53.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Tile.cs",
               "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Dokumente\\GitHub\\DungeonMaker\\Dungeonmaker\\Tile.cs",
               "RelativeDocumentMoniker": "Dungeonmaker\\Tile.cs",
@@ -52,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\micha\\OneDrive\\Dokumente\\GitHub\\DungeonMaker\\Dungeonmaker\\Program.cs",
               "RelativeDocumentMoniker": "Dungeonmaker\\Program.cs",
               "ToolTip": "C:\\Users\\micha\\OneDrive\\Dokumente\\GitHub\\DungeonMaker\\Dungeonmaker\\Program.cs",
               "RelativeToolTip": "Dungeonmaker\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-24T15:02:13.593Z",
               "EditorCaption": ""

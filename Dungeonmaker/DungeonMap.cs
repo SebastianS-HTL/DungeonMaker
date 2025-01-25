@@ -20,9 +20,12 @@ namespace Dungeonmaker
             return null;
         }
 
-        public void createDungeonMap(int width, int height)
+        public void createDungeonMap(MapSettings settings)
         {
-            throw new NotImplementedException();
+            int width = settings.width;
+            int height = settings.height;
+            connector = new Tile[width, height];
+            Tuple<int,int> startPosition = settings.startPosition;
         }
     }
 }

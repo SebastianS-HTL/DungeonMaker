@@ -1,0 +1,15 @@
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\bin\Debug\net8.0\Dungeonmaker.exe
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\bin\Debug\net8.0\Dungeonmaker.deps.json
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\bin\Debug\net8.0\Dungeonmaker.runtimeconfig.json
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\bin\Debug\net8.0\Dungeonmaker.dll
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\bin\Debug\net8.0\Dungeonmaker.pdb
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.AssemblyInfoInputs.cache
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.AssemblyInfo.cs
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.csproj.CoreCompileInputs.cache
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.sourcelink.json
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.dll
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\refint\Dungeonmaker.dll
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.pdb
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\Dungeonmaker.genruntimeconfig.cache
+C:\Users\micha\OneDrive\Dokumente\GitHub\DungeonMaker\Dungeonmaker\obj\Debug\net8.0\ref\Dungeonmaker.dll
