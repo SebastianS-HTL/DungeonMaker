@@ -10,19 +10,29 @@ namespace Dungeonmaker
     internal class Tile
     {
         private bool[] connections;
-        private int[] effects;
+        private List<string> attributes;
 
-        public Tile(bool[] connections, int[] effects = null) {
+        public Tile(bool[] connections) {
+            setConnections(connections);
+
+            this.attributes = attributes;
+        }
+
+        public void setConnections(bool[] connections)
+        {
             if (connections.Length == 4)
             {
                 this.connections = connections;
             }
-            else 
+            else
             {
                 throw new ArgumentException("you need 4 booleans as parameters in connections");
             }
+        }
 
-            this.effects = effects;
+        public void addAttribute(string attribute)
+        {
+            attributes.Add(attribute);
         }
 
         public bool[] getConnections() { return connections; }
