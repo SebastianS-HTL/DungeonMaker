@@ -33,5 +33,9 @@ namespace Dungeonmaker
         }
 
         public bool[] getConnections() { return _connections; }
+
+        public List<string> getAttributes() { 
+            return attributes;
+        }
     }
 }

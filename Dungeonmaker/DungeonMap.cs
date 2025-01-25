@@ -15,7 +15,7 @@ namespace Dungeonmaker
         private int _startX = 5;
         private int _startY = 5;
         private int _mainPathLength = 5;
-        private int _tries = 10;
+        private int _maxTries = 10;
 
         /// <summary>
         /// how wide the generated map should be (default: 11)
@@ -48,7 +48,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// x position of the start room (default: 5)
+        /// zero indexed X position of the start room (default: 5)
         /// </summary>
         public int startX
         {
@@ -63,7 +63,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// y position of the start room (default: 5)
+        /// zero indexed Y position of the start room (default: 5)
         /// </summary>
         public int startY
         {
@@ -95,14 +95,14 @@ namespace Dungeonmaker
         /// <summary>
         /// Amount of tries the generateDungeonMap has before it returns null. Causes for that can f.e. be inputting a mainPathLength too large (default: 1000)
         /// </summary>
-        public int tries
+        public int maxTries
         {
-            get { return _tries; }
+            get { return _maxTries; }
             set
             {
                 if (value > 0)
                 {
-                    _tries = value;
+                    _maxTries = value;
                 }
             }
         }
@@ -131,40 +131,44 @@ namespace Dungeonmaker
             for (int i = 0; i < _mainPathLength; i++)
             {
                 bool movePossible;
-                int direction;
+                int direction = -1;
 
                 List<int> directions = new List<int>() { 0, 1, 2, 3 };
 
-                do
+                if (i != _mainPathLength - 1)
                 {
-                    if (directions.Count == 0)
+                    do
                     {
-                        Console.WriteLine("we shat ourself");
-                        return null;
-                    }
+                        if (directions.Count == 0)
+                        {
+                            Console.WriteLine("we shat ourself");
+                            return null;
+                        }
 
-                    movePossible = true;
+                        movePossible = true;
 
-                    Random random = new Random();
-                    int num = random.Next(0, directions.Count);
-                    direction = directions[num];
-                    directions.RemoveAt(num);
+                        Random random = new Random();
+                        int num = random.Next(0, directions.Count);
+                        direction = directions[num];
+                        directions.RemoveAt(num);
 
-                    //check if move in direction is possible
-                    movePossible = movePossible && !(direction == 0 && (lastTileY == 0 || map[lastTileY-1,lastTileX] != null));
-                    movePossible = movePossible && !(direction == 1 && (lastTileX == mapWidth - 1 || map[lastTileY,lastTileX+1] != null));
-                    movePossible = movePossible && !(direction == 2 && (lastTileY == mapHeight - 1 || map[lastTileY + 1, lastTileX] != null));
-                    movePossible = movePossible && !(direction == 3 && (lastTileX == 0 || map[lastTileY, lastTileX - 1] != null));
-                } while (!movePossible);
-
-                Console.WriteLine(direction);
+                        //check if move in direction is possible
+                        movePossible = movePossible && !(direction == 0 && (lastTileY == 0 || map[lastTileY - 1, lastTileX] != null));
+                        movePossible = movePossible && !(direction == 1 && (lastTileX == mapWidth - 1 || map[lastTileY, lastTileX + 1] != null));
+                        movePossible = movePossible && !(direction == 2 && (lastTileY == mapHeight - 1 || map[lastTileY + 1, lastTileX] != null));
+                        movePossible = movePossible && !(direction == 3 && (lastTileX == 0 || map[lastTileY, lastTileX - 1] != null));
+                    } while (!movePossible);
+                }
 
                 bool[] connections = new bool[4];
                 if (previousConnection != -1)
                 {
                     connections[previousConnection] = true;
                 }
-                connections[direction] = true;
+                if (direction != -1)
+                {
+                    connections[direction] = true;
+                }
 
                 map[lastTileY, lastTileX] = new Tile(connections);
 
@@ -172,6 +176,12 @@ namespace Dungeonmaker
                 if (i == 0)
                 {
                     map[lastTileY, lastTileX].AddAttribute("start");
+                }
+
+                //add "end" Attribute to last Tile
+                if (direction == -1)
+                {
+                    map[lastTileY, lastTileX].AddAttribute("end");
                 }
 
                 if (direction == 0)

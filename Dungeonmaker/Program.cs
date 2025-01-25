@@ -6,10 +6,15 @@ namespace Dungeonmaker
     {
         static void Main(string[] args)
         {
-            DungeonMap dungeonMap = new DungeonMap();
-            dungeonMap.mainPathLength = 1;
-            var e = dungeonMap.generateDungeonMap();
-            Console.WriteLine(e);
+            DungeonMap dungeon = new DungeonMap();
+            dungeon.mapWidth = 3;
+            dungeon.mapHeight = 3;
+            dungeon.startX = 1;
+            dungeon.startY = 1;
+            dungeon.mainPathLength = 9;
+            dungeon.generateDungeonMap();
+
+            Tile[,] tiles = dungeon.getTiles();
         }
     }
 }
