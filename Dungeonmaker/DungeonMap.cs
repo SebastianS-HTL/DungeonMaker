@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dungeonmaker
 {
-    internal class DungeonMap
+    public class DungeonMap
     {
         //default values, changed by get/setters
         private int _mapWidth = 11;
@@ -18,8 +18,7 @@ namespace Dungeonmaker
         private int _tries = 1000;
 
         /// <summary>
-        /// how wide the generated map should be
-        /// default: 11
+        /// how wide the generated map should be (default: 11)
         /// </summary>
         public int mapWidth
         {
@@ -34,8 +33,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// how high the generated map should be
-        /// default: 11
+        /// how high the generated map should be (default: 11)
         /// </summary>
         public int mapHeight
         {
@@ -50,8 +48,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// x position of the start room
-        /// default: 5
+        /// x position of the start room (default: 5)
         /// </summary>
         public int startX
         {
@@ -66,8 +63,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// y position of the start room
-        /// default: 5
+        /// y position of the start room (default: 5)
         /// </summary>
         public int startY
         {
@@ -82,8 +78,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// length of the main Path
-        /// default: 5
+        /// length of the main Path (default: 5)
         /// </summary>
         public int mainPathLength
         {
@@ -98,8 +93,7 @@ namespace Dungeonmaker
         }
 
         /// <summary>
-        /// Amount of tries the generateDungeonMap has before it returns null. Causes for that can f.e. be inputting a mainPathLength too large
-        /// default: 1000
+        /// Amount of tries the generateDungeonMap has before it returns null. Causes for that can f.e. be inputting a mainPathLength too large (default: 1000)
         /// </summary>
         public int tries
         {
@@ -177,7 +171,7 @@ namespace Dungeonmaker
                 //add "start" Attribute to first Tile
                 if (i == 0)
                 {
-                    map[lastTileY, lastTileX].addAttribute("start");
+                    map[lastTileY, lastTileX].AddAttribute("start");
                 }
 
                 if (direction == 0)
@@ -203,6 +197,36 @@ namespace Dungeonmaker
             }
 
             return map;
+        }
+
+        public class Tile
+        {
+            private bool[] _connections = {false, false , false , false };
+            private List<string> attributes = new List<string>();
+
+            public Tile(bool[] connections)
+            {
+                SetConnections(connections);
+            }
+
+            public void SetConnections(bool[] connections)
+            {
+                if (connections.Length == 4)
+                {
+                    _connections = connections;
+                }
+                else
+                {
+                    throw new ArgumentException("you need 4 booleans as parameters in connections");
+                }
+            }
+
+            public void AddAttribute(string attribute)
+            {
+                attributes.Add(attribute);
+            }
+
+            public bool[] getConnections() { return _connections; }
         }
     }
 }
