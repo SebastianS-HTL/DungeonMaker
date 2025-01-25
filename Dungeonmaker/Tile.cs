@@ -10,7 +10,7 @@ namespace Dungeonmaker
     internal class Tile
     {
         private bool[] connections;
-        private List<string> attributes;
+        private List<string> attributes = new List<string>();
 
         public Tile(bool[] connections) {
             setConnections(connections);

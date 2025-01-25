@@ -7,8 +7,8 @@ namespace Dungeonmaker
         static void Main(string[] args)
         {
             DungeonMap dungeonMap = new DungeonMap();
-
-            dungeonMap.createDungeonMap();
+            dungeonMap.mainPathLength = 100;
+            dungeonMap.generateDungeonMap();
         }
     }
 }
