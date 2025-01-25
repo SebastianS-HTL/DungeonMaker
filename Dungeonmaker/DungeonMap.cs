@@ -15,7 +15,7 @@ namespace Dungeonmaker
         private int _startX = 5;
         private int _startY = 5;
         private int _mainPathLength = 5;
-        private int _tries = 1000;
+        private int _tries = 10;
 
         /// <summary>
         /// how wide the generated map should be (default: 11)
