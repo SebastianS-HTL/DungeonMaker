@@ -11,10 +11,10 @@ namespace Dungeonmaker
             dungeon.mapHeight = 3;
             dungeon.startX = 1;
             dungeon.startY = 1;
-            dungeon.mainPathLength = 9;
+            dungeon.mainPathLength = 5;
             dungeon.generateDungeonMap();
 
-            Tile[,] tiles = dungeon.getTiles();
+            dungeon.visualize();
         }
     }
 }

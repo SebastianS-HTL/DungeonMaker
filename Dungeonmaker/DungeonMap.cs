@@ -111,12 +111,139 @@ namespace Dungeonmaker
 
         public Tile[,]? getTiles()
         {
-            if (map != null)
+            if (map == null)
             {
                 return map;
             }
 
             return null;
+        }
+
+        public void visualize()
+        {
+            if (map == null)
+            {
+                return;
+            }
+
+            string output = "";
+
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                string topL = "";
+                string midL = "";
+                string botL = "";
+
+                for (int j = 0; j < map.GetLength(1); j++)
+                {
+                    if (map[i,j] == null)
+                    {
+                        topL += "      ";
+                        midL += "  <>  ";
+                        botL += "      ";
+                    }
+                    else
+                    {
+                        topL += "  ";
+                        if (map[i, j].getConnections()[0])
+                        {
+                            topL += "||  ";
+                        }
+                        else
+                        {
+                            topL += "    ";
+                        }
+
+                        if (map[i, j].getConnections()[3])
+                        {
+                            midL += "==";
+                        }
+                        else
+                        {
+                            midL += "  ";
+                        }
+                        midL += "[]";
+                        if (map[i, j].getConnections()[1])
+                        {
+                            midL += "==";
+                        }
+                        else 
+                        {
+                            midL += "  ";
+                        }
+
+                        botL += "  ";
+                        if(map[i, j].getConnections()[2])
+                        {
+                            botL += "||  ";
+                        }
+                        else
+                        {
+                            botL += "    ";
+                        }
+                    }
+                }
+
+
+                Console.WriteLine(topL);
+                Console.WriteLine(midL);
+                Console.WriteLine(botL);
+            }
+
+            return;
+
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                string topL = "";
+                string fixL = "";
+                string midL = "";
+                string botL = "";
+
+                for (int j = 0; j < map.GetLength(1); j++)
+                {
+                    if (map[i,j] == null)
+                    {
+                        output = "          \n          \n          \n          \n          ";
+                    }
+                    else
+                    {
+                        if (map[i, j].getConnections()[0])
+                        {
+                            topL += "    ██    ";
+                        }
+
+                        if (map[i, j].getConnections()[3])
+                        {
+                            midL += "██";
+                        }
+                        else
+                        {
+                            midL += "  ";
+                        }
+
+                        midL += "██████";
+                        fixL += "  ██████  ";
+
+                        if (map[i, j].getConnections()[1])
+                        {
+                            midL += "██";
+                        }
+                        else
+                        {
+                            midL += "  ";
+                        }
+
+                        if (map[i, j].getConnections()[2])
+                        {
+                            botL += "    ██    ";
+                        }
+
+                        output = topL + "\n" + fixL + "\n" + midL + "\n" + fixL + "\n" + botL;
+                    }
+                }
+
+                Console.WriteLine(output);
+            }
         }
 
         public Tile[,]? generateDungeonMap()

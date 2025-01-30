@@ -32,7 +32,13 @@ namespace Dungeonmaker
             attributes.Add(attribute);
         }
 
-        public bool[] getConnections() { return _connections; }
+        public bool[] getConnections() {
+            if (_connections == null)
+            {
+                return [ false, false, false, false ];
+            }
+            return _connections; 
+        }
 
         public List<string> getAttributes() { 
             return attributes;
