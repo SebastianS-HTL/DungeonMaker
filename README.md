@@ -36,8 +36,8 @@ dungeon.generateDungeonMap();
 Tile[,] tiles = dungeon.getTiles();
 ```
 
-## Visualisation
-using the method `visualize()` implemented in  `DungeonMap`, a simple representation of the dungeon is printed to the console
+## Visualization
+Using the method `visualize()` implemented in  `DungeonMap`, a simple representation of the dungeon is printed to the console
 ```csharp
 DungeonMap dungeon = new DungeonMap();
 dungeon.mapWidth = 5;
