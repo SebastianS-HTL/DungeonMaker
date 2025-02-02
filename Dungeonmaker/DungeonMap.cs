@@ -217,7 +217,7 @@ namespace Dungeonmaker
                     {
                         if (directions.Count == 0)
                         {
-                            Console.WriteLine("Error while generating                                  "); //previously we shout ourelfs
+                            Console.WriteLine("Error while generating                                  "); //previously we shout ourselfs
                             return null;
                         }
 
