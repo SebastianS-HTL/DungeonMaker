@@ -18,7 +18,33 @@ namespace Dungeonmaker
         private int _mainPathLength = 5;
         private int _maxTries = 10;
 
-        public double creationtime = -1;
+        public double _creationTime = -1;
+        public bool _creationSuccessfull;
+        public int _neededAttempts = 0;
+
+        /// <summary>
+        /// how long it took to generate your map
+        /// </summary>
+        public double creationTime
+        {
+            get { return _creationTime; }
+        }
+
+        /// <summary>
+        /// was the creation successfull?
+        /// </summary>
+        public bool creationSuccessfull
+        {
+            get { return _creationSuccessfull; }
+        }
+
+        /// <summary>
+        /// how many tries it took to generate your map
+        /// </summary>
+        public int neededAttempts
+        {
+            get { return _neededAttempts; }
+        }
 
         /// <summary>
         /// how wide the generated map should be (default: 11)
@@ -126,6 +152,7 @@ namespace Dungeonmaker
         {
             if (map == null)
             {
+                Console.WriteLine("nothing to output");
                 return;
             }
 
@@ -195,13 +222,32 @@ namespace Dungeonmaker
 
         public Tile[,]? generateDungeonMap()
         {
+            Tile[,]? t = null;
+            _neededAttempts = 0;
+
             Stopwatch stoppy = Stopwatch.StartNew();
 
+            for (int i = 0;i < maxTries && t == null; i++) { t = tryDungeonMapGen(); _neededAttempts++; }
+
+            stoppy.Stop();
+            _creationTime = stoppy.ElapsedTicks * (1000.0 / Stopwatch.Frequency);
+
+            _creationSuccessfull = t != null;
+            if(t == null)
+            {
+                map = null;
+                return null;
+            }
+            return map;
+        }
+
+        private Tile[,]? tryDungeonMapGen()
+        {
             map = new Tile[_mapHeight, _mapWidth];
 
             //create basic path
             int lastTileX = _startX;
-            int lastTileY = _startY; 
+            int lastTileY = _startY;
             int previousConnection = -1;
 
             for (int i = 0; i < _mainPathLength; i++)
@@ -217,7 +263,7 @@ namespace Dungeonmaker
                     {
                         if (directions.Count == 0)
                         {
-                            Console.WriteLine("Error while generating                                  "); //previously we shout ourselfs
+                            //error, no place to go
                             return null;
                         }
 
@@ -281,9 +327,6 @@ namespace Dungeonmaker
                     previousConnection = 1;
                 }
             }
-
-            stoppy.Stop();
-            creationtime = stoppy.ElapsedTicks * (1000.0 / Stopwatch.Frequency);
 
             return map;
         }

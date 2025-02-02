@@ -8,11 +8,11 @@ namespace Dungeonmaker
         static void Main(string[] args)
         {
             DungeonMap dungeon = new DungeonMap();
-            dungeon.mapWidth = 11;
-            dungeon.mapHeight = 11;
-            dungeon.startX = 5;
-            dungeon.startY = 5;
-            dungeon.mainPathLength = 10;
+            dungeon.mapWidth = 111;
+            dungeon.mapHeight = 111;
+            dungeon.startX = 55;
+            dungeon.startY = 55;
+            dungeon.mainPathLength = 100;
 
             while (true)
             {
@@ -21,8 +21,6 @@ namespace Dungeonmaker
                 dungeon.generateDungeonMap();
 
                 dungeon.visualize();
-
-                Console.WriteLine(dungeon.creationtime);
 
                 Console.ReadKey();
             }
