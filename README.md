@@ -22,7 +22,7 @@ A `DungeonMap` has multiple propertys for customizing the result:
 - `startY`: Y position of the starting room **(zero indexed)**
 - `mainPathLength`: Length of the path from the start to the end room
 - `maxTries`: The amount of times the algorythm can start over if it gets stuck in a corner
-- `creationTime`: the time it took to generate your Dungeon (in milliseconds)
+- `creationTime`: the time it took to generate your `DungeonMap` (in milliseconds)
 - `creationSuccessfull`: was the creation of your Dungeon successful
 - `neededAttempts`: how many of the `maxTries` were used
   
