@@ -20,7 +20,7 @@ namespace Dungeonmaker
 
         public double _creationTime = -1;
         public bool _creationSuccessfull;
-        public int _neededAttempts = 0;
+        public int _neededTries = 0;
 
         /// <summary>
         /// how long it took to generate your map
@@ -41,9 +41,9 @@ namespace Dungeonmaker
         /// <summary>
         /// how many tries it took to generate your map
         /// </summary>
-        public int neededAttempts
+        public int neededTries
         {
-            get { return _neededAttempts; }
+            get { return _neededTries; }
         }
 
         /// <summary>
@@ -223,11 +223,11 @@ namespace Dungeonmaker
         public Tile[,]? generateDungeonMap()
         {
             Tile[,]? t = null;
-            _neededAttempts = 0;
+            _neededTries = 0;
 
             Stopwatch stoppy = Stopwatch.StartNew();
 
-            for (int i = 0;i < maxTries && t == null; i++) { t = tryDungeonMapGen(); _neededAttempts++; }
+            for (int i = 0;i < maxTries && t == null; i++) { t = tryDungeonMapGen(); _neededTries++; }
 
             stoppy.Stop();
             _creationTime = stoppy.ElapsedTicks * (1000.0 / Stopwatch.Frequency);

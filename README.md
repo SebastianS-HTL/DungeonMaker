@@ -22,7 +22,7 @@ A `DungeonMap` has multiple propertys for customizing the result:
 - `startY`: Y position of the starting room **(zero indexed)**
 - `mainPathLength`: Length of the path from the start to the end room
 - `maxTries`: The amount of times the algorythm can start over if it gets stuck in a corner
-- `creationTime`: the time it took to generate your Dungeon (in milliseconds)
+- `creationTime`: the time it took to generate your `DungeonMap` (in milliseconds)
 - `creationSuccessfull`: was the creation of your Dungeon successful
 - `neededAttempts`: how many of the `maxTries` were used
   
@@ -38,6 +38,32 @@ dungeon.generateDungeonMap();
 
 Tile[,] tiles = dungeon.getTiles();
 ```
+
+## Read-Only Properties
+These properties cannot be modified and only return meaningfull values after dungeon generation:
+
+- `creationTime`: the time it took to generate your `DungeonMap` (in milliseconds)
+- `creationSuccessfull`: was the creation of your Dungeon successful
+- `neededAttempts`: how many of the `maxTries` were used
+  
+Example of how to use them:
+```csharp
+DungeonMap dungeon = new DungeonMap();
+dungeon.mapWidth = 11;
+dungeon.mapHeight = 11;
+dungeon.startX = 5;
+dungeon.startY = 5;
+dungeon.mainPathLength = 25;
+dungeon.generateDungeonMap();
+
+dungeon.visualize();
+
+Console.WriteLine("Time: " + dungeon.creationTime);
+Console.WriteLine("Successfull: " + dungeon.creationSuccessfull);
+Console.WriteLine("Attempts: " + dungeon.neededTries + " of " + dungeon.maxTries);
+```
+
+![alt text](readProp.png)
 
 ## Visualization
 The method `visualize()` implemented in  `DungeonMap` prints the dungeon to the console:

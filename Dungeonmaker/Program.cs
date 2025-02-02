@@ -8,22 +8,18 @@ namespace Dungeonmaker
         static void Main(string[] args)
         {
             DungeonMap dungeon = new DungeonMap();
-            dungeon.mapWidth = 111;
-            dungeon.mapHeight = 111;
-            dungeon.startX = 55;
-            dungeon.startY = 55;
-            dungeon.mainPathLength = 100;
+            dungeon.mapWidth = 11;
+            dungeon.mapHeight = 11;
+            dungeon.startX = 5;
+            dungeon.startY = 5;
+            dungeon.mainPathLength = 25;
+            dungeon.generateDungeonMap();
 
-            while (true)
-            {
-                Console.SetCursorPosition(0, 0);
+            dungeon.visualize();
 
-                dungeon.generateDungeonMap();
-
-                dungeon.visualize();
-
-                Console.ReadKey();
-            }
+            Console.WriteLine("Time: " + dungeon.creationTime);
+            Console.WriteLine("Successfull: " + dungeon.creationSuccessfull);
+            Console.WriteLine("Attempts: " + dungeon.neededTries + " of " + dungeon.maxTries);
         }
     }
 }
