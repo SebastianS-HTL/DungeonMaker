@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -16,6 +17,8 @@ namespace Dungeonmaker
         private int _startY = 5;
         private int _mainPathLength = 5;
         private int _maxTries = 10;
+
+        public double creationtime = -1;
 
         /// <summary>
         /// how wide the generated map should be (default: 11)
@@ -184,7 +187,6 @@ namespace Dungeonmaker
                     }
                 }
 
-
                 Console.WriteLine(topL);
                 Console.WriteLine(midL);
                 Console.WriteLine(botL);
@@ -193,6 +195,8 @@ namespace Dungeonmaker
 
         public Tile[,]? generateDungeonMap()
         {
+            Stopwatch stoppy = Stopwatch.StartNew();
+
             map = new Tile[_mapHeight, _mapWidth];
 
             //create basic path
@@ -213,7 +217,7 @@ namespace Dungeonmaker
                     {
                         if (directions.Count == 0)
                         {
-                            Console.WriteLine("we shat ourself");
+                            Console.WriteLine("Error while generating                                  "); //previously we shout ourelfs
                             return null;
                         }
 
@@ -277,6 +281,9 @@ namespace Dungeonmaker
                     previousConnection = 1;
                 }
             }
+
+            stoppy.Stop();
+            creationtime = stoppy.ElapsedTicks * (1000.0 / Stopwatch.Frequency);
 
             return map;
         }

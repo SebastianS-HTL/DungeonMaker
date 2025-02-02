@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Dungeonmaker
 {
@@ -7,14 +8,24 @@ namespace Dungeonmaker
         static void Main(string[] args)
         {
             DungeonMap dungeon = new DungeonMap();
-            dungeon.mapWidth = 3;
-            dungeon.mapHeight = 3;
-            dungeon.startX = 1;
-            dungeon.startY = 1;
-            dungeon.mainPathLength = 5;
-            dungeon.generateDungeonMap();
+            dungeon.mapWidth = 11;
+            dungeon.mapHeight = 11;
+            dungeon.startX = 5;
+            dungeon.startY = 5;
+            dungeon.mainPathLength = 10;
 
-            dungeon.visualize();
+            while (true)
+            {
+                Console.SetCursorPosition(0, 0);
+
+                dungeon.generateDungeonMap();
+
+                dungeon.visualize();
+
+                Console.WriteLine(dungeon.creationtime);
+
+                Console.ReadKey();
+            }
         }
     }
 }
