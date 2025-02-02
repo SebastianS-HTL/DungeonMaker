@@ -63,8 +63,6 @@ Console.WriteLine("Successfull: " + dungeon.creationSuccessfull);
 Console.WriteLine("Attempts: " + dungeon.neededTries + " of " + dungeon.maxTries);
 ```
 
-![alt text](readProp.png)
-
 ## Visualization
 The method `visualize()` implemented in  `DungeonMap` prints the dungeon to the console:
 ```csharp
