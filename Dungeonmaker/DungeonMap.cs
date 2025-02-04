@@ -214,10 +214,12 @@ namespace Dungeonmaker
                     }
                 }
 
-                Console.WriteLine(topL);
-                Console.WriteLine(midL);
-                Console.WriteLine(botL);
+                output += topL + "\n";
+                output += midL + "\n";
+                output += botL + "\n";
             }
+
+            Console.WriteLine(output);
         }
 
         public Tile[,]? generateDungeonMap()
